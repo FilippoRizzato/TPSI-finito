@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Architettura Client-Server</title>
+</head>
+<body>
+<div class="text-center mb-4">
+    <h1>Architettura Client-Server e il Ruolo delle Socket</h1>
+</div>
+<nav class="navbar navbar-expand-sm custom-navbar">
+    <div class="container-fluid">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="pag_Sock.html">Cosa sono le Socket?</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Cli_Sev.html">Architettura Client Server</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="OSI.html">Spiegazione del modello OSI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="glossario.html">Glossario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="home_Page.html">Home Page</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <div class="row mb-3">
+        <div class="col-12">
+            <h2>Cos'è l'Architettura Client-Server?</h2>
+            <p>L'architettura Client-Server è un modello di rete che prevede una divisione tra il lato client, che invia richieste, e il lato server, che risponde a tali richieste. Il server è tipicamente un computer potente o un software che fornisce servizi, mentre il client è solitamente un dispositivo che accede ai servizi tramite una rete.</p>
+            <p>In questo modello, il server è centrale e gestisce molteplici richieste provenienti da diversi client, che possono essere applicazioni desktop, browser web, o altri dispositivi. La comunicazione tra client e server avviene attraverso una rete, utilizzando protocolli standardizzati come HTTP, FTP, e altri.</p>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12">
+            <h3>Come le Socket si Collegano all'Architettura Client-Server</h3>
+            <p>Le socket sono componenti cruciali nell'architettura Client-Server. Una socket è un endpoint per la comunicazione tra due macchine su una rete. Ogni socket è identificato da un indirizzo IP e un numero di porta, che insieme consentono ai client e ai server di stabilire una connessione. In pratica, quando un client vuole comunicare con un server, deve creare una socket e connettersi all'indirizzo IP e alla porta del server.</p>
+            <p>Il server, d'altra parte, apre una socket sulla sua macchina e ascolta le richieste in arrivo. Quando una richiesta da un client arriva sulla socket del server, il server la elabora e invia una risposta. Questo processo avviene tramite il protocollo di comunicazione scelto (come TCP o UDP).</p>
+            <p>In un'applicazione tipica, ad esempio, un client web (come un browser) si connette a un server web per richiedere una pagina. La richiesta viene inviata tramite una socket, e il server risponde con il contenuto della pagina richiesta tramite la stessa connessione socket.</p>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12">
+            <h4>Esempio di Connessione Client-Server con le Socket</h4>
+            <p>Un esempio classico di connessione client-server avviene utilizzando il protocollo TCP, che fornisce una connessione affidabile. Quando un client si connette al server, avviene una sequenza di handshake (scambio di pacchetti) per stabilire una connessione sicura.</p>
+            <p><strong>Client (richiesta):</strong> Il client crea una socket e si connette al server all'indirizzo IP e alla porta specificati.</p>
+            <p><strong>Server (risposta):</strong> Il server ascolta sulla porta specificata, accetta la connessione e invia i dati richiesti al client.</p>
+            <p><strong>Client (ricezione):</strong> Il client riceve i dati dal server e li visualizza o li elabora.</p>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12">
+            <h5>Diagramma di un'Architettura Client-Server</h5>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Client-server_model.svg" alt="Diagramma Client-Server" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <p>2024 Introduzione alle Socket. All Rights Reserved.</p>
+    <p>Realizzato da Rizzato Filippo</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-cVKIPhG81rKrOSn0" crossorigin="anonymous"></script>
+</body>
+</html>
