@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Cosa sono le Socket?</title>
+</head>
+<body>
+
+<!-- Titolo sopra la Navbar -->
+<div class="text-center mb-4">
+    <h1>Introduzione alle Socket</h1>
+</div>
+
+<nav class="navbar navbar-expand-sm custom-navbar">
+    <div class="container-fluid">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="pag_Sock.html">Cosa sono le Socket?</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Cli_Sev.html">Architettura Client Server</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="OSI.html">Spiegazione del modello OSI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="glossario.html">Glossario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="home_Page.html">Home Page</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Cosa sono le Socket?</h2>
+    <p class="lead">
+        Le socket sono un'interfaccia di programmazione (API) utilizzata per stabilire e gestire una comunicazione bidirezionale tra due dispositivi in rete.
+        Una socket è il punto finale di una connessione che consente il trasferimento di dati tra client e server.
+    </p>
+    <p>
+        Le socket sono fondamentali nel mondo delle reti informatiche, in quanto permettono agli sviluppatori di creare applicazioni di rete che possono scambiarsi informazioni in tempo reale.
+        Ogni socket è associata a un indirizzo IP e a un numero di porta specifici, il che garantisce la comunicazione tra processi su sistemi diversi.
+    </p>
+    <p>
+        Le socket supportano due protocolli principali: **TCP** (Transmission Control Protocol) e **UDP** (User Datagram Protocol).
+        TCP offre una comunicazione affidabile, mentre UDP si concentra sulla velocità.
+    </p>
+
+    <div class="text-center mt-4">
+        <img src="https://www.beyondlogic.org/wp-content/uploads/2020/01/SocketCAN-678x381.png" alt="Diagramma di Socket" class="img-fluid rounded shadow">
+    </div>
+
+    <div class="mt-4">
+        <h2>Socket Datagram e Socket Stream</h2>
+        <p>
+            I socket datagram e i socket stream differiscono principalmente nel modo in cui gestiscono la comunicazione tra dispositivi.
+            I socket datagram utilizzano il protocollo UDP (User Datagram Protocol), che è senza connessione e trasmette i dati in pacchetti autonomi, chiamati datagrammi, senza garantire l'ordine o la consegna. Sono ideali per applicazioni che richiedono velocità e tollerano una perdita di dati, come streaming multimediali o giochi online. I socket stream, invece, si basano sul protocollo TCP (Transmission Control Protocol), che è orientato alla connessione. Essi garantiscono un flusso di dati affidabile, ordinato e privo di duplicati, rendendoli adatti
+            per applicazioni come il trasferimento di file o la navigazione web, dove l'integrità dei dati è fondamentale.
+        </p>
+
+    </div>
+</div>
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <p>2024 Introduzione alle Socket. All Rights Reserved.</p>
+    <p>Realizzato da Rizzato Filippo</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-cVKIPhG81rKrOSn0H4zYfTw+KkqLR9GPiEglsjRE3S6SpzOF24C1S+KCqs5Iw9Ci" crossorigin="anonymous"></script>
+</body>
+</html>

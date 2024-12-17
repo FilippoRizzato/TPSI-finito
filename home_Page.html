@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Introduzione alle Socket</title>
+</head>
+<body>
+
+<div class="d-flex align-items-center justify-content-center mb-4">
+    <img src="Schermata del 2024-12-03 08-32-28.png" alt="Logo" class="mr-3" height="50px" width="auto">
+    <h1>Introduzione alle Socket</h1>
+</div>
+
+<nav class="navbar navbar-expand-sm custom-navbar">
+    <div class="container-fluid">
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="pag_Sock.html">Cosa sono le Socket?</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Cli_Sev.html">Architettura Client Server</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="OSI.html">Spiegazione del modello OSI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="glossario.html">Glossario</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#">Home Page</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <div id="manualSlideshow" class="text-center">
+        <img id="slideshowImage" src="https://www.raiscuola.rai.it/dl/img/2021/03/25/1616683561166_1582717587391_technology-1283624_1920.jpg" class="img-fluid" alt="Slideshow">
+        <div class="mt-2">
+            <button class="btn btn-primary" onclick="prevImage()">Precedente</button>
+            <button class="btn btn-primary" onclick="nextImage()">Successivo</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const images = [
+        "https://www.raiscuola.rai.it/dl/img/2021/03/25/1616683561166_1582717587391_technology-1283624_1920.jpg",
+        "https://www.pcmod.it/wp-content/uploads/2023/06/Sicurezza-Informatica-per-le-Piccole-Imprese.webp",
+        "https://uicmarche.it/wp-content/uploads/2022/03/Computer-sito-1.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+        const slideshowImage = document.getElementById('slideshowImage');
+        slideshowImage.src = images[index];
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
+</script>
+
+
+<div class="container">
+    <div class="section-content">
+        <div class="left-column">
+            <p>Le socket sono strumenti fondamentali per la comunicazione tra dispositivi in rete. Permettono lo scambio di dati tra applicazioni in esecuzione su host differenti, attraverso il protocollo TCP/IP.</p>
+            <img src="https://teoriadeisegnali.it/appint/html/Images/tipo_socket.jpg" alt="Cosa sono le socket?" class="img-fluid">
+        </div>
+
+        <div class="right-column">
+            <img src="https://png.pngtree.com/background/20211217/original/pngtree-computer-light-effect-technology-theme-blue-cool-electronic-background-picture-image_1591421.jpg" alt="Immagine grande" class="img-fluid" >
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-white text-center py-4">
+    <p>2024 Introduzione alle Socket. All Rights Reserved.</p>
+    <p>Realizzato da Rizzato Filippo</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-cVKIPhG81rKrOSn0" crossorigin="anonymous"></script>
+</body>
+</html>
