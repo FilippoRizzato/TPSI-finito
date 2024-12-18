@@ -1,73 +1,90 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it"> <!-- Specifica che il documento è HTML5 e la lingua principale è italiano. -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Modello OSI</title>
+    <meta charset="UTF-8"> <!-- Definisce la codifica dei caratteri come UTF-8, necessaria per supportare caratteri speciali. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Rende la pagina responsiva per dispositivi mobili. -->
+    <link rel="stylesheet" href="style.css"> <!-- Collega un file CSS esterno per personalizzare lo stile della pagina. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous"> <!-- Importa Bootstrap 5 per layout e componenti predefiniti. -->
+    <title>Modello OSI</title> <!-- Titolo che appare nella scheda del browser. -->
 </head>
 <body>
-<div class="text-center mb-4">
-    <h1>Il Modello OSI (Open Systems Interconnection)</h1>
+<div class="text-center mb-4"> <!-- Div per il titolo principale con un margine inferiore. -->
+    <h1>Il Modello OSI (Open Systems Interconnection)</h1> <!-- Intestazione principale della pagina. -->
 </div>
-<nav class="navbar navbar-expand-sm custom-navbar">
-    <div class="container-fluid">
-        <ul class="navbar-nav mx-auto">
+
+<!-- Barra di navigazione -->
+<nav class="navbar navbar-expand-sm custom-navbar"> <!-- Navbar espandibile su dispositivi piccoli con classe personalizzata. -->
+    <div class="container-fluid"> <!-- Contenitore fluido per un layout responsivo. -->
+        <ul class="navbar-nav mx-auto"> <!-- Lista di elementi di navigazione centrati. -->
             <li class="nav-item">
-                <a class="nav-link" href="pag_Sock.html">Cosa sono le Socket?</a>
+                <a class="nav-link" href="pag_Sock.html">Cosa sono le Socket?</a> <!-- Link a una pagina informativa sulle socket. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Cli_Sev.html">Architettura Client Server</a>
+                <a class="nav-link" href="Cli_Sev.html">Architettura Client Server</a> <!-- Link alla pagina sull'architettura Client-Server. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="OSI.html">Spiegazione del modello OSI</a>
+                <a class="nav-link" href="OSI.html">Spiegazione del modello OSI</a> <!-- Link alla pagina corrente. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="glossario.html">Glossario</a>
+                <a class="nav-link" href="glossario.html">Glossario</a> <!-- Link a una pagina con un glossario. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="home_Page.html">Home Page</a>
+                <a class="nav-link" href="home_Page.html">Home Page</a> <!-- Link alla home page del sito. -->
             </li>
         </ul>
     </div>
 </nav>
 
-<div class="container mt-4">
-    <div class="row mb-3">
-        <div class="col-12">
-            <h2>Cos'è il Modello OSI?</h2>
-            <p>Il modello OSI (Open Systems Interconnection) è un modello di riferimento a 7 livelli che descrive i vari strati della comunicazione in una rete di computer. Ogni livello ha funzioni specifiche e si interfaccia con i livelli superiori e inferiori per gestire la trasmissione dei dati.</p>
-            <p>Il modello è stato creato per standardizzare le comunicazioni tra i sistemi di rete, consentendo ai dispositivi e software di interagire in modo prevedibile e strutturato. I 7 livelli del modello OSI sono:</p>
-            <ol>
-                <li><strong>Livello 1: Fisico</strong> - Gestisce la trasmissione dei dati attraverso i media fisici.</li>
-                <li><strong>Livello 2: Data Link</strong> - Gestisce l'accesso al mezzo e la correzione degli errori.</li>
-                <li><strong>Livello 3: Rete</strong> - Gestisce l'instradamento dei pacchetti tra le reti.</li>
-                <li><strong>Livello 4: Trasporto</strong> - Garantisce una trasmissione affidabile dei dati.</li>
-                <li><strong>Livello 5: Sessione</strong> - Gestisce le sessioni di comunicazione tra applicazioni.</li>
-                <li><strong>Livello 6: Presentazione</strong> - Si occupa della sintassi dei dati e della codifica.</li>
-                <li><strong>Livello 7: Applicazione</strong> - Fornisce servizi di rete direttamente agli utenti finali.</li>
+<!-- Contenitore principale -->
+<div class="container mt-4"> <!-- Contenitore con margine superiore. -->
+    <div class="row mb-3"> <!-- Riga per il contenuto principale con margine inferiore. -->
+        <div class="col-12"> <!-- Colonna che occupa l'intera larghezza. -->
+            <h2>Cos'è il Modello OSI?</h2> <!-- Titolo della sezione. -->
+            <p>
+                Il modello OSI (Open Systems Interconnection) è un modello standardizzato che descrive
+                i livelli della comunicazione in una rete di computer. Aiuta a comprendere come i dati vengono trasferiti
+                tra dispositivi in modo strutturato.
+            </p>
+            <p>
+                Ogni livello ha funzioni specifiche e interagisce con quelli vicini per garantire il funzionamento complessivo della rete.
+                I 7 livelli del modello sono descritti di seguito:
+            </p>
+            <ol> <!-- Lista ordinata dei 7 livelli del modello OSI. -->
+                <li><strong>Livello 1: Fisico</strong> - Gestisce la trasmissione di dati attraverso i media fisici come cavi o onde radio.</li>
+                <li><strong>Livello 2: Data Link</strong> - Si occupa dell'accesso al mezzo di trasmissione e della correzione di errori. </li>
+                <li><strong>Livello 3: Rete</strong> - Instrada i pacchetti tra reti diverse. </li>
+                <li><strong>Livello 4: Trasporto</strong> - Garantisce la trasmissione affidabile dei dati tra due endpoint. </li>
+                <li><strong>Livello 5: Sessione</strong> - Gestisce l'apertura e chiusura delle sessioni di comunicazione. </li>
+                <li><strong>Livello 6: Presentazione</strong> - Si occupa della sintassi e della conversione dei dati per garantire compatibilità. </li>
+                <li><strong>Livello 7: Applicazione</strong> - Fornisce servizi di rete direttamente alle applicazioni degli utenti finali. </li>
             </ol>
         </div>
     </div>
 
+    <!-- Sezione per l'immagine rappresentativa -->
     <div class="row mb-3">
         <div class="col-12">
-            <h3>Immagine Rappresentativa del Modello OSI</h3>
-            <div class="text-center">
-                <img src="https://www.areanetworking.it/wp-content/uploads/2008/06/img8_l3ws_osi3.png" alt="Diagramma del Modello OSI" class="img-fluid shadow-sm">
-                <p class="mt-2">Diagramma che rappresenta i 7 livelli del modello OSI.</p>
+            <h3>Immagine Rappresentativa del Modello OSI</h3> <!-- Intestazione per la sezione dell'immagine. -->
+            <div class="text-center"> <!-- Contenitore per centrare l'immagine e il testo correlato. -->
+                <img src="https://www.areanetworking.it/wp-content/uploads/2008/06/img8_l3ws_osi3.png"
+                     alt="Diagramma del Modello OSI"
+                     class="img-fluid shadow-sm"> <!-- Immagine fluida con ombreggiatura leggera. -->
+                <p class="mt-2">Diagramma che rappresenta i 7 livelli del modello OSI.</p> <!-- Descrizione sotto l'immagine. -->
             </div>
         </div>
     </div>
 </div>
 
 <!-- Footer -->
-<footer class="bg-dark text-white text-center py-4 mt-5">
-    <p>2024 Introduzione al Modello OSI. All Rights Reserved.</p>
-    <p>Realizzato da Rizzato Filippo</p>
+<footer class="bg-dark text-white text-center py-4 mt-5"> <!-- Footer con sfondo scuro, testo bianco e margine superiore. -->
+    <p>2024 Introduzione al Modello OSI. All Rights Reserved.</p> <!-- Informazioni sul copyright. -->
+    <p>Realizzato da Rizzato Filippo</p> <!-- Crediti dell'autore della pagina. -->
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-cVKIPhG81rKrOSn0" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-cVKIPhG81rKrOSn0"
+        crossorigin="anonymous"></script> <!-- Script Bootstrap per funzionalità dinamiche come il menu della navbar. -->
 </body>
 </html>
