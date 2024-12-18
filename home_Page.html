@@ -1,95 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Specifica che il documento è in HTML5 e la lingua è l'inglese. -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Introduzione alle Socket</title>
+    <meta charset="UTF-8"> <!-- Indica che il documento utilizza il set di caratteri UTF-8, necessario per supportare caratteri speciali. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Garantisce un layout responsivo, adattandosi alle dimensioni dello schermo. -->
+    <link rel="stylesheet" href="style.css"> <!-- Collega un file CSS personalizzato per definire lo stile del documento. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Importa Bootstrap 5 per l'utilizzo di classi predefinite di stile e componenti responsivi. -->
+    <title>Introduzione alle Socket</title> <!-- Titolo della pagina che appare nella scheda del browser. -->
 </head>
 <body>
 
-<div class="d-flex align-items-center justify-content-center mb-4">
+<!-- Header con logo e titolo -->
+<div class="d-flex align-items-center justify-content-center mb-4"> <!-- Utilizza classi Bootstrap per centrare contenuto. -->
     <img src="Schermata del 2024-12-03 08-32-28.png" alt="Logo" class="mr-3" height="50px" width="auto">
-    <h1>Introduzione alle Socket</h1>
+    <!-- Immagine del logo con altezza fissa e larghezza proporzionata. -->
+    <h1>Introduzione alle Socket</h1> <!-- Titolo principale della pagina. -->
 </div>
 
-<nav class="navbar navbar-expand-sm custom-navbar">
-    <div class="container-fluid">
-        <ul class="navbar-nav mx-auto">
+<!-- Barra di navigazione -->
+<nav class="navbar navbar-expand-sm custom-navbar"> <!-- Barra di navigazione Bootstrap espandibile su schermi piccoli. -->
+    <div class="container-fluid"> <!-- Contenitore fluido per garantire layout responsivo. -->
+        <ul class="navbar-nav mx-auto"> <!-- Centra la lista della navigazione. -->
             <li class="nav-item">
-                <a class="nav-link" href="pag_Sock.html">Cosa sono le Socket?</a>
+                <a class="nav-link" href="pag_Sock.html">Cosa sono le Socket?</a> <!-- Link alla pagina delle socket. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Cli_Sev.html">Architettura Client Server</a>
+                <a class="nav-link" href="Cli_Sev.html">Architettura Client Server</a> <!-- Link alla pagina sull'architettura. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="OSI.html">Spiegazione del modello OSI</a>
+                <a class="nav-link" href="OSI.html">Spiegazione del modello OSI</a> <!-- Link alla spiegazione del modello OSI. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="glossario.html">Glossario</a>
+                <a class="nav-link" href="glossario.html">Glossario</a> <!-- Link al glossario. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#">Home Page</a>
+                <a class="nav-link disabled" href="#">Home Page</a> <!-- Link disabilitato per la pagina corrente. -->
             </li>
         </ul>
     </div>
 </nav>
 
-<div class="container mt-4">
-    <div id="manualSlideshow" class="text-center">
-        <img id="slideshowImage" src="https://www.raiscuola.rai.it/dl/img/2021/03/25/1616683561166_1582717587391_technology-1283624_1920.jpg" class="img-fluid" alt="Slideshow">
+<!-- Slideshow manuale -->
+<div class="container mt-4"> <!-- Contenitore per il layout responsivo con margine superiore. -->
+    <div id="manualSlideshow" class="text-center"> <!-- Sezione per lo slideshow con immagini centrate. -->
+        <img id="slideshowImage" src="https://www.raiscuola.rai.it/dl/img/2021/03/25/1616683561166_1582717587391_technology-1283624_1920.jpg"
+             class="img-fluid" alt="Slideshow"> <!-- Immagine iniziale dello slideshow. -->
         <div class="mt-2">
-            <button class="btn btn-primary" onclick="prevImage()">Precedente</button>
-            <button class="btn btn-primary" onclick="nextImage()">Successivo</button>
+            <button class="btn btn-primary" onclick="prevImage()">Precedente</button> <!-- Pulsante per immagine precedente. -->
+            <button class="btn btn-primary" onclick="nextImage()">Successivo</button> <!-- Pulsante per immagine successiva. -->
         </div>
     </div>
 </div>
 
 <script>
+    // Array contenente gli URL delle immagini da mostrare nello slideshow.
     const images = [
         "https://www.raiscuola.rai.it/dl/img/2021/03/25/1616683561166_1582717587391_technology-1283624_1920.jpg",
         "https://www.pcmod.it/wp-content/uploads/2023/06/Sicurezza-Informatica-per-le-Piccole-Imprese.webp",
         "https://uicmarche.it/wp-content/uploads/2022/03/Computer-sito-1.jpg"
     ];
 
-    let currentIndex = 0;
+    let currentIndex = 0; // Indice dell'immagine attualmente visualizzata.
 
+    // Funzione per mostrare l'immagine corrente basata sull'indice.
     function showImage(index) {
         const slideshowImage = document.getElementById('slideshowImage');
-        slideshowImage.src = images[index];
+        slideshowImage.src = images[index]; // Cambia la sorgente dell'immagine.
     }
 
+    // Funzione per passare all'immagine successiva.
     function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
+        currentIndex = (currentIndex + 1) % images.length; // Incrementa l'indice con loop circolare.
         showImage(currentIndex);
     }
 
+    // Funzione per tornare all'immagine precedente.
     function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        currentIndex = (currentIndex - 1 + images.length) % images.length; // Decrementa l'indice con loop circolare.
         showImage(currentIndex);
     }
 </script>
 
-
+<!-- Sezione contenuto -->
 <div class="container">
     <div class="section-content">
-        <div class="left-column">
+        <div class="left-column"> <!-- Colonna sinistra con contenuto testuale e immagine. -->
             <p>Le socket sono strumenti fondamentali per la comunicazione tra dispositivi in rete. Permettono lo scambio di dati tra applicazioni in esecuzione su host differenti, attraverso il protocollo TCP/IP.</p>
             <img src="https://teoriadeisegnali.it/appint/html/Images/tipo_socket.jpg" alt="Cosa sono le socket?" class="img-fluid">
+            <!-- Immagine illustrativa sul funzionamento delle socket. -->
         </div>
 
-        <div class="right-column">
-            <img src="https://png.pngtree.com/background/20211217/original/pngtree-computer-light-effect-technology-theme-blue-cool-electronic-background-picture-image_1591421.jpg" alt="Immagine grande" class="img-fluid" >
+        <div class="right-column"> <!-- Colonna destra con immagine di supporto. -->
+            <img src="https://png.pngtree.com/background/20211217/original/pngtree-computer-light-effect-technology-theme-blue-cool-electronic-background-picture-image_1591421.jpg"
+                 alt="Immagine grande" class="img-fluid"> <!-- Immagine a larghezza adattiva. -->
         </div>
     </div>
 </div>
 
-<footer class="bg-dark text-white text-center py-4">
-    <p>2024 Introduzione alle Socket. All Rights Reserved.</p>
-    <p>Realizzato da Rizzato Filippo</p>
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4"> <!-- Footer con sfondo scuro e testo bianco, centrato. -->
+    <p>2024 Introduzione alle Socket. All Rights Reserved.</p> <!-- Dichiarazione di copyright. -->
+    <p>Realizzato da Rizzato Filippo</p> <!-- Credit per l'autore della pagina. -->
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-cVKIPhG81rKrOSn0" crossorigin="anonymous"></script>
+<!-- Importazione di script Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-cVKIPhG81rKrOSn0" crossorigin="anonymous"></script>
 </body>
 </html>
