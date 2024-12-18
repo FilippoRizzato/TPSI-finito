@@ -1,82 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Specifica che il documento è HTML5 e imposta la lingua principale a inglese. -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Architettura Client-Server</title>
+    <meta charset="UTF-8"> <!-- Definisce la codifica dei caratteri come UTF-8 per supportare caratteri speciali. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Rende la pagina responsiva per dispositivi mobili. -->
+    <link rel="stylesheet" href="style.css"> <!-- Collegamento a un file CSS personalizzato per lo stile della pagina. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous"> <!-- Importa Bootstrap 5 per layout e componenti predefiniti. -->
+    <title>Architettura Client-Server</title> <!-- Titolo che appare nella scheda del browser. -->
 </head>
 <body>
-<div class="text-center mb-4">
-    <h1>Architettura Client-Server e il Ruolo delle Socket</h1>
+<div class="text-center mb-4"> <!-- Div per il titolo principale con un margine inferiore. -->
+    <h1>Architettura Client-Server e il Ruolo delle Socket</h1> <!-- Intestazione centrale. -->
 </div>
-<nav class="navbar navbar-expand-sm custom-navbar">
-    <div class="container-fluid">
-        <ul class="navbar-nav mx-auto">
+
+<!-- Barra di navigazione -->
+<nav class="navbar navbar-expand-sm custom-navbar"> <!-- Navbar espandibile per schermi piccoli, con una classe personalizzata. -->
+    <div class="container-fluid"> <!-- Contenitore fluido per un layout reattivo. -->
+        <ul class="navbar-nav mx-auto"> <!-- Lista di elementi di navigazione centrati. -->
             <li class="nav-item">
-                <a class="nav-link" href="pag_Sock.html">Cosa sono le Socket?</a>
+                <a class="nav-link" href="pag_Sock.html">Cosa sono le Socket?</a> <!-- Link a una pagina informativa sulle socket. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Cli_Sev.html">Architettura Client Server</a>
+                <a class="nav-link" href="Cli_Sev.html">Architettura Client Server</a> <!-- Link alla pagina corrente. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="OSI.html">Spiegazione del modello OSI</a>
+                <a class="nav-link" href="OSI.html">Spiegazione del modello OSI</a> <!-- Link al modello OSI. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="glossario.html">Glossario</a>
+                <a class="nav-link" href="glossario.html">Glossario</a> <!-- Link a un glossario. -->
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="home_Page.html">Home Page</a>
+                <a class="nav-link " href="home_Page.html">Home Page</a> <!-- Link alla pagina principale. -->
             </li>
         </ul>
     </div>
 </nav>
 
-<div class="container mt-4">
-    <div class="row mb-3">
-        <div class="col-12">
-            <h2>Cos'è l'Architettura Client-Server?</h2>
-            <p>L'architettura Client-Server è un modello di rete che prevede una divisione tra il lato client, che invia richieste, e il lato server, che risponde a tali richieste. Il server è tipicamente un computer potente o un software che fornisce servizi, mentre il client è solitamente un dispositivo che accede ai servizi tramite una rete.</p>
-            <p>In questo modello, il server è centrale e gestisce molteplici richieste provenienti da diversi client, che possono essere applicazioni desktop, browser web, o altri dispositivi. La comunicazione tra client e server avviene attraverso una rete, utilizzando protocolli standardizzati come HTTP, FTP, e altri.</p>
+<div class="container mt-4"> <!-- Contenitore principale con margine superiore. -->
+    <div class="row mb-3"> <!-- Riga per l'introduzione con margine inferiore. -->
+        <div class="col-12"> <!-- Colonna che occupa tutta la larghezza. -->
+            <h2>Cos'è l'Architettura Client-Server?</h2> <!-- Titolo della sezione. -->
+            <p>
+                L'architettura Client-Server è un modello di rete che divide le responsabilità tra client e server.
+                I client inviano richieste e i server rispondono fornendo servizi o risorse.
+            </p>
+            <p>
+                Questo modello è ampiamente utilizzato per applicazioni web, sistemi di database, e altro,
+                sfruttando protocolli standard come HTTP e FTP per comunicare.
+            </p>
         </div>
     </div>
 
-    <div class="row mb-3">
+    <div class="row mb-3"> <!-- Riga per spiegare il ruolo delle socket. -->
         <div class="col-12">
             <h3>Come le Socket si Collegano all'Architettura Client-Server</h3>
-            <p>Le socket sono componenti cruciali nell'architettura Client-Server. Una socket è un endpoint per la comunicazione tra due macchine su una rete. Ogni socket è identificato da un indirizzo IP e un numero di porta, che insieme consentono ai client e ai server di stabilire una connessione. In pratica, quando un client vuole comunicare con un server, deve creare una socket e connettersi all'indirizzo IP e alla porta del server.</p>
-            <p>Il server, d'altra parte, apre una socket sulla sua macchina e ascolta le richieste in arrivo. Quando una richiesta da un client arriva sulla socket del server, il server la elabora e invia una risposta. Questo processo avviene tramite il protocollo di comunicazione scelto (come TCP o UDP).</p>
-            <p>In un'applicazione tipica, ad esempio, un client web (come un browser) si connette a un server web per richiedere una pagina. La richiesta viene inviata tramite una socket, e il server risponde con il contenuto della pagina richiesta tramite la stessa connessione socket.</p>
+            <p>
+                Le socket sono fondamentali per permettere la comunicazione tra client e server.
+                Funzionano come endpoint della comunicazione, identificati da un indirizzo IP e un numero di porta.
+            </p>
+            <p>
+                Il client crea una socket per connettersi al server, che ascolta richieste su una porta specifica.
+                Dopo aver stabilito la connessione, client e server scambiano dati tramite la socket.
+            </p>
         </div>
     </div>
 
-    <div class="row mb-3">
+    <div class="row mb-3"> <!-- Riga per un esempio pratico. -->
         <div class="col-12">
             <h4>Esempio di Connessione Client-Server con le Socket</h4>
-            <p>Un esempio classico di connessione client-server avviene utilizzando il protocollo TCP, che fornisce una connessione affidabile. Quando un client si connette al server, avviene una sequenza di handshake (scambio di pacchetti) per stabilire una connessione sicura.</p>
-            <p><strong>Client (richiesta):</strong> Il client crea una socket e si connette al server all'indirizzo IP e alla porta specificati.</p>
-            <p><strong>Server (risposta):</strong> Il server ascolta sulla porta specificata, accetta la connessione e invia i dati richiesti al client.</p>
-            <p><strong>Client (ricezione):</strong> Il client riceve i dati dal server e li visualizza o li elabora.</p>
+            <p>
+                In una connessione TCP, il client avvia una richiesta e il server risponde:
+            </p>
+            <p><strong>Client:</strong> Crea una socket e si connette all'indirizzo e alla porta del server.</p>
+            <p><strong>Server:</strong> Accetta la connessione e risponde elaborando i dati richiesti.</p>
+            <p><strong>Client:</strong> Riceve i dati e li utilizza, ad esempio visualizzandoli in un'applicazione web.</p>
         </div>
     </div>
 
-    <div class="row mb-3">
+    <div class="row mb-3"> <!-- Riga per il diagramma. -->
         <div class="col-12">
-            <div class="text-center mt-4">
-            <h5>Diagramma di un'Architettura Client-Server</h5>
-            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231128175510/Client-Server-Model-2.png" alt="Diagramma Client-Server" class="img-fluid rounded shadow">
+            <div class="text-center mt-4"> <!-- Contenitore per il diagramma centrato. -->
+                <h5>Diagramma di un'Architettura Client-Server</h5>
+                <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231128175510/Client-Server-Model-2.png"
+                     alt="Diagramma Client-Server"
+                     class="img-fluid rounded shadow"> <!-- Immagine con stile fluido e ombreggiatura. -->
             </div>
         </div>
     </div>
 </div>
 
 <!-- Footer -->
-<footer class="bg-dark text-white text-center py-4 mt-5">
-    <p>2024 Introduzione alle Socket. All Rights Reserved.</p>
-    <p>Realizzato da Rizzato Filippo</p>
+<footer class="bg-dark text-white text-center py-4 mt-5"> <!-- Footer con sfondo scuro e testo centrato. -->
+    <p>2024 Introduzione alle Socket. All Rights Reserved.</p> <!-- Testo informativo. -->
+    <p>Realizzato da Rizzato Filippo</p> <!-- Crediti dell'autore. -->
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-cVKIPhG81rKrOSn0" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-cVKIPhG81rKrOSn0"
+        crossorigin="anonymous"></script> <!-- Script Bootstrap per funzionalità dinamiche. -->
 </body>
 </html>
